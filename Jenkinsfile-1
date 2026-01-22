@@ -7,8 +7,8 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        AWS_REGION     = 'us-east-2'
-        AWS_ACCOUNT_ID = '200385945243'
+        AWS_REGION     = 'ap-south-1'
+        AWS_ACCOUNT_ID = '285633211803'
         ECR_REPO       = 'netflixx'
         IMAGE_TAG      = 'latest'
         ECR_URI        = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
@@ -23,7 +23,7 @@ pipeline {
         stage('Checkout from Git') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Yashdubey455/Netflix-DevSecOps-Project.git'
+                    url: 'https://github.com/Sharad-Parit6094/Netflix-DevSecOps-Project.git'
             }
         }
 
@@ -104,31 +104,31 @@ pipeline {
 
         success {
             emailext(
-                subject: "✅ SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
+                subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
                 body: """
-                <h2>Pipeline Succeeded 🎉</h2>
+                <h2>Pipeline Succeeded </h2>
                 <p><b>Job:</b> ${JOB_NAME}</p>
                 <p><b>Build Number:</b> ${BUILD_NUMBER}</p>
                 <p><b>Status:</b> SUCCESS</p>
                 <p><b>Build URL:</b>
                 <a href="${BUILD_URL}">${BUILD_URL}</a></p>
                 """,
-                to: "Yashdubey455@gmail.com"
+                to: "sharadparit0417@gmail.com"
             )
         }
 
         failure {
             emailext(
-                subject: "❌ FAILED: ${JOB_NAME} #${BUILD_NUMBER}",
+                subject: "FAILED: ${JOB_NAME} #${BUILD_NUMBER}",
                 body: """
-                <h2>Pipeline Failed 🚨</h2>
+                <h2>Pipeline Failed </h2>
                 <p><b>Job:</b> ${JOB_NAME}</p>
                 <p><b>Build Number:</b> ${BUILD_NUMBER}</p>
                 <p><b>Status:</b> FAILED</p>
                 <p><b>Check Logs:</b>
                 <a href="${BUILD_URL}">${BUILD_URL}</a></p>
                 """,
-                to: "Yashdubey455@gmail.com"
+                to: "sharadparit0417@gmail.com"
             )
         }
     }
