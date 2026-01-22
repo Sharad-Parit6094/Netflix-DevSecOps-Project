@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Yashdubey455/Netflix-DevSecOps-Project.git
+    repoURL: https://github.com/Sharad-Parit6094/Netflix-DevSecOps-Project.git
     targetRevision: main
     path: Kubernetes
 
