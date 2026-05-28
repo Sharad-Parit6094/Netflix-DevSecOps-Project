@@ -8,7 +8,7 @@ pipeline {
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
         AWS_REGION     = 'ap-south-1'
-        AWS_ACCOUNT_ID = '285633211803'
+        AWS_ACCOUNT_ID = '572059939498'
         ECR_REPO       = 'netflixx'
         IMAGE_TAG      = 'latest'
         ECR_URI        = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
@@ -113,7 +113,7 @@ pipeline {
                 <p><b>Build URL:</b>
                 <a href="${BUILD_URL}">${BUILD_URL}</a></p>
                 """,
-                to: "sharadparit0417@gmail.com"
+                to: "sharadparit2026@gmail.com"
             )
         }
 
@@ -128,7 +128,7 @@ pipeline {
                 <p><b>Check Logs:</b>
                 <a href="${BUILD_URL}">${BUILD_URL}</a></p>
                 """,
-                to: "sharadparit0417@gmail.com"
+                to: "sharadparit2026@gmail.com"
             )
         }
     }
