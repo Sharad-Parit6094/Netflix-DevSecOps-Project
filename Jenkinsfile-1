@@ -81,7 +81,7 @@ pipeline {
                         | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
 
                         docker build \
-                        --build-arg TMDB_V3_API_KEY=8be8d845a9a6b565b3c96505101e811d \
+                        --build-arg TMDB_V3_API_KEY=dc61b7baaf92b6903e87299deece7f57 \
                         -t ${ECR_REPO}:${IMAGE_TAG} .
 
                         docker tag ${ECR_REPO}:${IMAGE_TAG} ${ECR_URI}:${IMAGE_TAG}
